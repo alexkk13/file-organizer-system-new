@@ -1,14 +1,27 @@
 'use client'
 
+<<<<<<< HEAD
 import { useState, useEffect } from 'react'
 import { useSession, signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
+=======
+/**
+ * PROFILE PAGE
+ * 
+ * 功能：用户个人资料页面
+ */
+
+import { useState, useEffect } from 'react'
+>>>>>>> 4c4b93b7107e22fdf1217ff044af32778dc10112
 import Sidebar from '@/components/Sidebar'
 import UserMenu from '@/components/UserMenu'
 
 export default function ProfilePage() {
+<<<<<<< HEAD
   const { data: session, status } = useSession()
   const router = useRouter()
+=======
+>>>>>>> 4c4b93b7107e22fdf1217ff044af32778dc10112
   const [mounted, setMounted] = useState(false)
   const [currentDate, setCurrentDate] = useState('')
 
@@ -17,6 +30,7 @@ export default function ProfilePage() {
     setCurrentDate(new Date().toLocaleDateString())
   }, [])
 
+<<<<<<< HEAD
   // 检查登录状态
   useEffect(() => {
     if (status === 'unauthenticated') {
@@ -54,17 +68,52 @@ export default function ProfilePage() {
             >
               Sign In
             </button>
+=======
+  // 服务器端渲染时显示占位符，避免 hydration 错误
+  if (!mounted) {
+    return (
+      <div className="flex min-h-screen bg-gray-950">
+        <Sidebar />
+        <div className="ml-64 flex-1">
+          <div className="sticky top-0 z-10 bg-gray-950/95 backdrop-blur-sm border-b border-gray-800 px-8 py-4 flex justify-end items-center">
+            <UserMenu userName="John Doe" userEmail="john.doe@example.com" />
+          </div>
+          <div className="p-8">
+            <div className="mb-8">
+              <h1 className="text-2xl font-bold text-white">Profile Settings</h1>
+              <p className="text-gray-500 text-sm mt-1">Manage your account information</p>
+            </div>
+            <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 max-w-2xl">
+              <div className="flex items-center gap-6 mb-6">
+                <div className="w-20 h-20 rounded-full bg-blue-600 flex items-center justify-center text-2xl text-white font-bold">
+                  JD
+                </div>
+                <div>
+                  <h2 className="text-xl font-semibold text-white">John Doe</h2>
+                  <p className="text-gray-400">john.doe@example.com</p>
+                  <p className="text-gray-600 text-sm mt-1">Connected to OneDrive</p>
+                </div>
+              </div>
+              <div className="border-t border-gray-800 pt-4">
+                <p className="text-gray-500 text-sm">Account type: Microsoft Entra ID</p>
+                <p className="text-gray-500 text-sm mt-1">Loading...</p>
+              </div>
+            </div>
+>>>>>>> 4c4b93b7107e22fdf1217ff044af32778dc10112
           </div>
         </div>
       </div>
     )
   }
 
+<<<<<<< HEAD
   // 获取真实用户信息
   const userName = session.user?.name || 'User'
   const userEmail = session.user?.email || 'user@example.com'
   const userInitial = userName.charAt(0).toUpperCase()
 
+=======
+>>>>>>> 4c4b93b7107e22fdf1217ff044af32778dc10112
   return (
     <div className="flex min-h-screen bg-gray-950">
       <Sidebar />
@@ -72,7 +121,11 @@ export default function ProfilePage() {
       <div className="ml-64 flex-1">
         {/* Top Bar */}
         <div className="sticky top-0 z-10 bg-gray-950/95 backdrop-blur-sm border-b border-gray-800 px-8 py-4 flex justify-end items-center">
+<<<<<<< HEAD
           <UserMenu userName={userName} userEmail={userEmail} />
+=======
+          <UserMenu userName="John Doe" userEmail="john.doe@example.com" />
+>>>>>>> 4c4b93b7107e22fdf1217ff044af32778dc10112
         </div>
 
         {/* Main Content */}
@@ -85,6 +138,7 @@ export default function ProfilePage() {
           <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 max-w-2xl">
             <div className="flex items-center gap-6 mb-6">
               <div className="w-20 h-20 rounded-full bg-blue-600 flex items-center justify-center text-2xl text-white font-bold">
+<<<<<<< HEAD
                 {userInitial}
               </div>
               <div>
@@ -94,6 +148,14 @@ export default function ProfilePage() {
                   <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                   Connected to OneDrive
                 </p>
+=======
+                JD
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold text-white">John Doe</h2>
+                <p className="text-gray-400">john.doe@example.com</p>
+                <p className="text-gray-600 text-sm mt-1">Connected to OneDrive</p>
+>>>>>>> 4c4b93b7107e22fdf1217ff044af32778dc10112
               </div>
             </div>
 

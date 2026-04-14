@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "next": "16.2.3",
+<<<<<<< HEAD
     "next-auth": "^5.0.0-beta.30",
+=======
+>>>>>>> 4c4b93b7107e22fdf1217ff044af32778dc10112
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },

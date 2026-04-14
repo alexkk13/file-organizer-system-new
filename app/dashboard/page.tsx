@@ -1,6 +1,9 @@
 'use client'
 
+<<<<<<< HEAD
 import { useSession } from 'next-auth/react'
+=======
+>>>>>>> 4c4b93b7107e22fdf1217ff044af32778dc10112
 import Link from 'next/link'
 import Sidebar from '@/components/Sidebar'
 import UserMenu from '@/components/UserMenu'
@@ -20,22 +23,33 @@ function StatCard({ title, value, icon, color }: {
 }
 
 export default function DashboardPage() {
+<<<<<<< HEAD
   const { data: session } = useSession()
 
   // 获取真实用户信息（Guest 时显示 Guest）
   const userName = session?.user?.name || 'Guest'
   const userEmail = session?.user?.email || ''
 
+=======
+>>>>>>> 4c4b93b7107e22fdf1217ff044af32778dc10112
   return (
     <div className="flex min-h-screen bg-gray-950">
       <Sidebar />
 
       <div className="ml-64 flex-1">
+<<<<<<< HEAD
         {/* Top Bar with User Menu - 使用真实用户信息 */}
         <div className="sticky top-0 z-10 bg-gray-950/95 backdrop-blur-sm border-b border-gray-800 px-8 py-4 flex justify-end items-center">
           <UserMenu 
             userName={userName}
             userEmail={userEmail}
+=======
+        {/* Top Bar with User Menu */}
+        <div className="sticky top-0 z-10 bg-gray-950/95 backdrop-blur-sm border-b border-gray-800 px-8 py-4 flex justify-end items-center">
+          <UserMenu 
+            userName="John Doe"
+            userEmail="john.doe@example.com"
+>>>>>>> 4c4b93b7107e22fdf1217ff044af32778dc10112
           />
         </div>
 
@@ -61,9 +75,17 @@ export default function DashboardPage() {
               <Link href="/scan" className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg text-sm font-medium transition">
                 🔍 Run New Scan
               </Link>
+<<<<<<< HEAD
               <Link href="/rules" className="bg-gray-800 border border-gray-700 hover:bg-gray-750 text-gray-300 px-5 py-2 rounded-lg text-sm transition">
                 ⚙️ Manage Rules
               </Link>
+=======
+              {/* 改为 /rules */}
+              <Link href="/rules" className="bg-gray-800 border border-gray-700 hover:bg-gray-750 text-gray-300 px-5 py-2 rounded-lg text-sm transition">
+                ⚙️ Manage Rules
+              </Link>
+              {/* 改为 /rules/new */}
+>>>>>>> 4c4b93b7107e22fdf1217ff044af32778dc10112
               <Link href="/rules/new" className="bg-gray-800 border border-gray-700 hover:bg-gray-750 text-gray-300 px-5 py-2 rounded-lg text-sm transition">
                 ➕ Create Rule
               </Link>

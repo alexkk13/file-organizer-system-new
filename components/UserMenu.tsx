@@ -2,7 +2,10 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
+<<<<<<< HEAD
 import { signOut } from 'next-auth/react'
+=======
+>>>>>>> 4c4b93b7107e22fdf1217ff044af32778dc10112
 
 interface UserMenuProps {
   userName?: string
@@ -25,11 +28,18 @@ export default function UserMenu({ userName = 'User', userEmail = 'user@example.
   }, [])
 
   const handleLogout = () => {
+<<<<<<< HEAD
     signOut({ callbackUrl: '/login' })
   }
 
   const userInitial = userName.charAt(0).toUpperCase()
 
+=======
+    // TODO: 后续添加登出逻辑
+    console.log('Logout clicked')
+  }
+
+>>>>>>> 4c4b93b7107e22fdf1217ff044af32778dc10112
   return (
     <div className="relative" ref={menuRef}>
       <button
@@ -40,7 +50,11 @@ export default function UserMenu({ userName = 'User', userEmail = 'user@example.
           <img src={userAvatar} alt={userName} className="w-8 h-8 rounded-full object-cover border border-gray-700" />
         ) : (
           <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-sm font-medium">
+<<<<<<< HEAD
             {userInitial}
+=======
+            {userName.charAt(0).toUpperCase()}
+>>>>>>> 4c4b93b7107e22fdf1217ff044af32778dc10112
           </div>
         )}
         <svg className={`w-4 h-4 text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -63,6 +77,10 @@ export default function UserMenu({ userName = 'User', userEmail = 'user@example.
             >
               <span>👤</span> Profile Settings
             </Link>
+<<<<<<< HEAD
+=======
+            {/* 改为 /setting - 匹配你的文件夹名称 */}
+>>>>>>> 4c4b93b7107e22fdf1217ff044af32778dc10112
             <Link
               href="/setting"
               className="flex items-center gap-3 px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 transition"
